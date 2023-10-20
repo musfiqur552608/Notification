@@ -1,6 +1,7 @@
 package org.freedu.notification
 
 import android.app.NotificationManager
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
@@ -19,6 +20,10 @@ class MainActivity : AppCompatActivity() {
             notification.setContentText(binding.content.text.toString())
             notification.setSmallIcon(R.drawable.high)
             notification.setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .setColor(Color.MAGENTA)
+                .setOnlyAlertOnce(true)
+                .setAutoCancel(true)
                 .build()
 
             val manager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
@@ -31,6 +36,10 @@ class MainActivity : AppCompatActivity() {
             notification.setContentText(binding.content.text.toString())
             notification.setSmallIcon(R.drawable.high)
             notification.setPriority(NotificationCompat.PRIORITY_LOW)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .setColor(Color.MAGENTA)
+                .setOnlyAlertOnce(true)
+                .setAutoCancel(true)
                 .build()
 
             val manager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
