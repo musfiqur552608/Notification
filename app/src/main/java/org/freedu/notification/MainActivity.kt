@@ -15,12 +15,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, SecondActivity::class.java)
 
         binding.high.setOnClickListener {
             val notification = NotificationCompat.Builder(this, App().CHANNEL_ID1)
             notification.setContentTitle(binding.title.text.toString())
             notification.setContentText(binding.content.text.toString())
+            intent.putExtra("DATA_REC", binding.content.text.toString())
             val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
             notification.setSmallIcon(R.drawable.high)
             notification.setPriority(NotificationCompat.PRIORITY_HIGH)
