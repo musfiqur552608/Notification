@@ -4,6 +4,10 @@ plugins {
 }
 
 android {
+
+    buildFeatures{
+        viewBinding = true
+    }
     namespace = "org.freedu.notification"
     compileSdk = 34
 
